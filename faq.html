@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preguntas Frecuentes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      padding: 15px 30px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .navbar img.logo {
+      height: 50px;
+    }
+
+    .navbar nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    .signup-button {
+      background-color: orange;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-top: 40px;
+    }
+
+    .faq-container {
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .faq-item {
+      background-color: #fff;
+      margin: 10px 0;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 15px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #2c3e50;
+      background-color: #eaeaea;
+    }
+
+    .faq-answer {
+      padding: 15px 20px;
+      display: none;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .contact {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 16px;
+    }
+
+    .contact a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navegación -->
+  <div class="navbar">
+    <img src="logo.jpg" alt="Food Wizz Logo" class="logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="faq.html">About Us</a>
+      <a href="#">Software</a>
+    </nav>
+    <button class="signup-button">Sign Up</button>
+  </div>
+
+  <h1>FREQUENT QUESTIONS</h1>
+
+  <div class="faq-container">
+    <div class="faq-item">
+      <div class="faq-question">How do I add a new product to the inventory?</div>
+      <div class="faq-answer">You can add a new product by navigating to the inventory section and clicking on "Add Product". Fill in the required details and save.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How do I search for a product in the inventory?</div>
+      <div class="faq-answer">Use the search bar at the top of the inventory page to find products by name or SKU.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How do I update the quantity of an existing product?</div>
+      <div class="faq-answer">Click on the product in the inventory list, then edit the quantity field and save the changes.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Can I generate an inventory report?</div>
+      <div class="faq-answer">Yes, go to the Reports section and select "Inventory Report" to generate and download it.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What do I do if I have a duplicate product?</div>
+      <div class="faq-answer">You can merge duplicate products by selecting them and choosing the "Merge" option, or delete one if it's not needed.</div>
+    </div>
+  </div>
+
+  <div class="contact">
+    For more information go to <a href="JEAN.html">Contact us</a>.
+  </div>
+
+  <script>
+    const questions = document.querySelectorAll('.faq-question');
+    questions.forEach(q => {
+      q.addEventListener('click', () => {
+        const answer = q.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+
+</body>
+</html>
