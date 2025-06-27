@@ -1,0 +1,179 @@
+/* Fondo general */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    background: #ffe0b2;
+}
+
+/* Contenedor principal */
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+/* Contenido alineado */
+.content-wrapper {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 500px; /* Ajustado para contener todo bien */
+    
+}
+
+/* Imagen del dispositivo */
+.device-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 500px;
+    height: auto;
+    z-index: 2;
+}
+
+/* Cuadro de texto */
+.info-box {
+    position: absolute;
+    left: 450px; /* Justo detrás de parte de la tablet */
+    top: 200px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 40px 70px;
+    width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+/* Estilos de texto */
+.info-box h1 {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size:  50px;
+    color: #ff7f00;
+    margin: 0;
+}
+
+.info-box h2 {
+    
+    font-size: 45px;
+    font-weight: 800;
+    color: #000000;
+    margin: 0px 0 15px;
+}
+
+.info-box p {
+    
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 50;
+    font-style: normal;
+    font-size: 20px;
+    color: black;
+    margin: 0;
+}
+
+.ayuda {
+    height: 400px;
+    width: 550px;
+    margin-left: 90px;
+    
+  }
+  
+  .segundainfo-box {
+    font-family: "Nunito", sans-serif;
+    font-weight: 50;
+    font-size: 22px;
+    position: absolute;
+    left: 660px;
+    width: 550px;
+    z-index: 1;
+    top: 1px;
+  }
+  
+  .intento {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 500px;
+
+  }
+  
+  .informacion {
+    display: flex;
+
+  }
+  
+  .titulo-verde {
+    background-color: #ff7f00;
+    color: white;
+    padding: 4px 100px;
+    border-radius: 41px;
+    font-weight: 80px;
+    font-size: 40px;
+    text-align: center;
+  }
+  
+  /*vamos a locurear*/
+  
+.contenedor-imagen-iconos {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: -50px;
+}
+
+.contenedor-imagen-iconos h2 {
+  color: #000;
+  margin-bottom: 30px;
+  font-size: 50px;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+}
+
+.contenedor-iconos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.cuadro-icono {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.icono {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.descripcion {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+  font-family: "Nunito", sans-serif;
+  margin-top: -3px;
+}
+
+.minisubs {
+  font-size: 25px;
+  color:  #ff7f00;
+}
+
