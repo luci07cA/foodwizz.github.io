@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodwizz - Why We Exist & Our Mission</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Why We Exist Section */
+        .why-exist-section {
+            background: linear-gradient(to right, #fff7ed, #fff7ed);
+            padding: 4rem 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .why-exist-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .why-exist-content h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #0f766e;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .why-exist-content p {
+            font-size: 1.25rem;
+            color: #0d9488;
+            line-height: 1.7;
+            max-width: 500px;
+        }
+
+        .images-container {
+            position: relative;
+        }
+
+        .image-wrapper {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .image-wrapper:last-child {
+            margin-bottom: 0;
+        }
+
+        .image-shadow {
+            position: absolute;
+            inset: 0;
+            background-color: #f97316;
+            z-index: 0;
+            top: 15px;
+        }
+
+        .image-shadow.top {
+            transform: translate(1rem, 1rem);
+        }
+
+        .image-shadow.bottom {
+            transform: translate(-1rem, 1rem);
+        }
+
+        .food-image {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            bottom: -50px
+        }
+
+        /* Mission and Vision Section */
+        .mission-vision-section {
+            background: linear-gradient(to left, #fff7ed, #fff7ed);
+            padding: 4rem 0;
+            min-height: 100vh;
+        }
+
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .mission-block, .vision-block {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .mission-block h2, .vision-block h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #0f766e;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .mission-block p, .vision-block p {
+            font-size: 1.125rem;
+            color: #0d9488;
+            line-height: 1.7;
+        }
+
+        .mission-image-wrapper {
+            position: relative;
+        }
+
+        .mission-image-wrapper .image-shadow {
+            transform: translate(-1rem, -1rem);
+        }
+
+        .vision-image-wrapper {
+            position: relative;
+        }
+
+        .vision-image-wrapper .image-shadow {
+            transform: translate(1rem, 1rem);
+        }
+
+        .mission-vision-image {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .why-exist-content h1 {
+                font-size: 3rem;
+            }
+
+            .mission-block h2, .vision-block h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .why-exist-section, .mission-vision-section {
+                padding: 2rem 0;
+            }
+
+            .why-exist-grid, .mission-vision-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .why-exist-content h1 {
+                font-size: 2.5rem;
+                text-align: center;
+            }
+
+            .why-exist-content p {
+                font-size: 1.125rem;
+                text-align: center;
+                max-width: none;
+            }
+
+            .mission-block h2, .vision-block h2 {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .mission-block p, .vision-block p {
+                text-align: center;
+            }
+
+            .image-shadow.top, .image-shadow.bottom {
+                transform: translate(0.5rem, 0.5rem);
+            }
+
+            .mission-image-wrapper .image-shadow {
+                transform: translate(-0.5rem, -0.5rem);
+            }
+
+            .vision-image-wrapper .image-shadow {
+                transform: translate(0.5rem, 0.5rem);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .why-exist-content h1 {
+                font-size: 2rem;
+            }
+
+            .mission-block h2, .vision-block h2 {
+                font-size: 1.75rem;
+            }
+
+            .why-exist-content p {
+                font-size: 1rem;
+            }
+
+            .mission-block p, .vision-block p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Hover effects */
+        .image-wrapper:hover .food-image,
+        .mission-image-wrapper:hover .mission-vision-image,
+        .vision-image-wrapper:hover .mission-vision-image {
+            transform: scale(1.02);
+            transition: transform 0.3s ease;
+        }
+
+        .food-image, .mission-vision-image {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Why We Exist Section -->
+    <section class="why-exist-section">
+        <div class="container">
+            <div class="why-exist-grid">
+                <!-- Left Content -->
+                <div class="why-exist-content">
+                    <h1>WHY WE EXIST?</h1>
+                    <p>
+                        Foodwizz empowers small restaurants and food trucks with smart inventory tools and expert guidance to
+                        reduce waste, control costs, and simplify food management.
+                    </p>
+                </div>
+
+                <!-- Right Images -->
+                <div class="images-container">
+                    <!-- Top Image -->
+                    <div class="image-wrapper">
+                        <div class="image-shadow top"></div>
+                        <img src="https://media.bizj.us/view/img/12559489/dsc0071*660xx6000-3375-0-313.jpg" 
+                             alt="Food truck kitchen workers" 
+                             class="food-image">
+                    </div>
+
+
+
+
+
+                    <!-- Bottom Image -->
+                    <div class="image-wrapper">
+                        <div class="image-shadow bottom"></div>
+                        <img src="https://www.newsherald.com/gcdn/presto/2023/01/12/NTNH/61c6984b-370d-42ef-a107-1c3c46edd6db-IMG-9027.JPG?width=1733&height=1156&fit=crop&format=pjpg&auto=webp" 
+                             alt="Colorful food trucks" 
+                             class="food-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission and Vision Section -->
+    <section class="mission-vision-section">
+        <div class="container">
+            <div class="mission-vision-grid">
+                <!-- Our Mission -->
+                <div class="mission-block">
+                    <div class="mission-image-wrapper">
+                        <div class="image-shadow"></div>
+                        <img src="https://www.theglobeandmail.com/resizer/v2/JWUOO5IPV5GCDA47D4E77FPO54?auth=1586fca4d146e5ec82a42badd206b602fa12017023e2ea42b303c3817bb6b9fa&width=1200&quality=80" 
+                             alt="Customer being served at food truck" 
+                             class="mission-vision-image">
+                    </div>
+
+                    <div>
+                        <h2>Our Mission</h2>
+                        <p>
+                            We empower small and medium-sized businesses by providing them with innovative, easy-to-access and
+                            highly secure inventory software, thus boosting their efficiency and development and stimulating their
+                            performance and progress.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Our Vision -->
+                <div class="vision-block">
+                    <div>
+                        <h2>Our Vision</h2>
+                        <p>
+                            We strive to be the leading and preferred firm for businesses to improve their inventory management,
+                            maximizing their sales through state-of-the-art IT solutions and expert consulting.
+                        </p>
+                    </div>
+
+                    <div class="vision-image-wrapper">
+                        <div class="image-shadow"></div>
+                        <img src="https://www.foodtruckbooking.es/uploads/blog/img_40_id_2966.png" 
+                             alt="Food preparation and service" 
+                             class="mission-vision-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
