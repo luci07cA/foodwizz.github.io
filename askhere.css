@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap'); /* Using Poppins as a similar-looking font */
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fffee8; /* Light cream background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #fefef5; /* Slightly lighter inner background */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1100px; /* Adjust as needed */
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; /* Align logo to the left */
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 120px; /* Adjust logo size as needed */
+    height: auto;
+}
+
+.form-card {
+    text-align: center;
+    width: 100%;
+}
+
+.form-card h1 {
+    font-size: 5.0em;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 700; /* Bold */
+}
+
+.form-card p {
+    font-size: 1.6em;
+    color: #666;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between text and icon */
+}
+
+.ambulance-icon {
+    font-size: 1.5em; /* Adjust size of the ambulance icon */
+}
+
+.input-group {
+    display: flex;
+    gap: 20px; /* Space between input fields */
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.input-group input,
+.textarea-group textarea {
+    flex: 1; /* Each input takes equal width */
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    background-color: #ffffff; /* White background for inputs */
+    outline: none; /* Remove outline on focus */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
+    min-width: 400px; /* Minimum width for inputs before wrapping */
+}
+
+.input-group input::placeholder,
+.textarea-group textarea::placeholder {
+    color: #aaa;
+}
+
+.input-group input:focus,
+.textarea-group textarea:focus {
+    border-color: #6a8c9e; /* Slightly darker blue on focus */
+    box-shadow: 0 0 0 3px rgba(106, 140, 158, 0.2); /* Light blue focus ring */
+}
+
+.textarea-group {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.textarea-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 120px; /* Minimum height for the textarea */
+}
+
+button[type="submit"] {
+    background-color: #3a5c6e; /* Darker blue/green submit button */
+    color: #fff;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto;
+    display: inline-block; /* Ensure button doesn't take full width */
+}
+
+button[type="submit"]:hover {
+    background-color: #2e4a5a; /* Slightly darker on hover */
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .input-group {
+        flex-direction: column; /* Stack inputs vertically on smaller screens */
+        gap: 15px;
+    }
+    .input-group input {
+        min-width: unset; /* Remove min-width for full flexibility */
+        width: 100%; /* Take full width */
+    }
+    .form-card h1 {
+        font-size: 1.8em;
+    }
+    .form-card p {
+        font-size: 1em;
+    }
+    button[type="submit"] {
+        width: 100%; /* Full width button on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+    .logo {
+        width: 100px;
+    }
+    .form-card h1 {
+        font-size: 1.5em;
+    }
+    .form-card p {
+        font-size: 0.9em;
+    }
+    .input-group input,
+    .textarea-group textarea {
+        padding: 12px 15px;
+        font-size: 0.95em;
+    }
+    button[type="submit"] {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+}
