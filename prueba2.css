@@ -1,0 +1,433 @@
+/* Importar todas las fuentes necesarias una sola vez al principio del archivo */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    /* Variables generales de color, unificadas para toda la página */
+    --primary-bg-color: #fffee8; /* Fondo general de la página, unificado a #fffee8 */
+    --card-bg-color: #f1ebd8; /* Fondo de la tarjeta de preguntas frecuentes */
+    --text-color: #333; /* Color de texto oscuro */
+
+    /* Variables para la barra de navegación */
+    --navbar-text-color: #555;
+    --button-bg-color: #e6b800; /* Botón "Sign Up" */
+    --button-text-color: #fff;
+    --logo-color: #000; /* Color para el texto del logo "Food Wizz" */
+
+    /* Variables para enlaces y acentos azules/oscuros */
+    --accent-blue-dark: #17404e; /* Usado para enlaces en FAQ */
+    --accent-blue-darker: #0e2933; /* Color más oscuro para hover de enlaces */
+
+    /* Variables específicas del formulario de contacto (renombradas para evitar conflictos) */
+    --contact-bg-lighter: #fefef5; /* Fondo del contenedor del formulario */
+    --contact-border-color: #ddd; /* Borde de los campos de entrada */
+    --contact-focus-border: #6a8c9e; /* Borde de los campos en foco */
+    --contact-button-color: #3a5c6e; /* Fondo del botón de enviar */
+    --contact-button-hover-color: #2e4a5a; /* Fondo del botón de enviar en hover */
+}
+
+/* Reseteo básico para todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos globales del cuerpo de la página */
+body {
+    font-family: 'Poppins', 'Roboto', sans-serif; /* Poppins como principal, Roboto como respaldo */
+    background-color: var(--primary-bg-color); /* Fondo unificado a #fffee8 */
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column; /* Para apilar la barra de navegación, FAQ y Contacto verticalmente */
+    min-height: 100vh; /* Ocupa al menos el 100% de la altura de la ventana */
+    padding: 0; /* Asegura que no haya padding global */
+}
+
+/* --- Estilos de la barra de navegación (Navbar) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Estilo para el logo de texto "Food Wizz" en la navbar */
+.navbar .logo {
+    font-size: 5em;
+    font-weight: 700;
+    color: var(--logo-color);
+    font-style: italic;
+    position: relative;
+    /* Si tu logo es una imagen, esta regla podría no ser necesaria o requerir una clase diferente en el HTML */
+}
+
+.navbar .logo::after {
+    content: 'wizz';
+    font-size: 0.6em;
+    position: absolute;
+    bottom: -5px;
+    right: -10px;
+    font-style: normal;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin-right: 30px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: var(--navbar-text-color);
+    font-weight: 400;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    color: var(--accent-blue-dark);
+}
+
+.sign-up-btn {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.sign-up-btn:hover {
+    background-color: #cc9900;
+}
+
+/* --- Estilos de la sección de Preguntas Frecuentes (FAQ) --- */
+.faq-container {
+    flex-grow: 1; /* Permite que esta sección ocupe el espacio disponible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: var(--primary-bg-color); /* Asegura que el fondo FAQ sea #fffee8 */
+}
+
+.faq-card {
+    background-color: var(--card-bg-color);
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.faq-card h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.faq-card .consult-text {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.faq-card ul {
+    list-style: disc;
+    margin-left: 25px;
+    margin-bottom: 30px;
+}
+
+.faq-card ul li {
+    margin-bottom: 15px;
+}
+
+.faq-card ul li a {
+    text-decoration: underline;
+    color: var(--accent-blue-dark); /* Usando la variable definida */
+    font-weight: 400;
+    font-size: 1.1em;
+}
+
+.faq-card ul li a:hover {
+    color: var(--accent-blue-darker); /* Usando la variable definida para hover */
+}
+
+.faq-card .more-info-text {
+    font-size: 1em;
+    margin-top: 30px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: 20px;
+}
+
+.faq-card .contact-us-link {
+    text-decoration: underline;
+    color: var(--accent-blue-dark); /* Usando la variable definida */
+    font-weight: 400;
+}
+
+.faq-card .contact-us-link:hover {
+    color: var(--accent-blue-darker); /* Usando la variable definida para hover */
+}
+
+.faq-card .footer-logo {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--logo-color);
+    font-style: italic;
+}
+
+---
+
+/* --- Estilos de la sección de Contacto (renombrados para claridad) --- */
+.contact-section { /* Contenedor principal de la sección de contacto */
+    background-color: var(--primary-bg-color); /* Fondo del contacto unificado a #fffee8 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh; /* Altura mínima para la sección de contacto */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.contact-section .contact-container { /* Contenedor del formulario dentro de la sección de contacto */
+    background-color: var(--contact-bg-lighter);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1100px;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-section .contact-header { /* Encabezado del formulario de contacto */
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.contact-section .contact-logo { /* Logo específico para la sección de contacto */
+    width: 120px;
+    height: auto;
+}
+
+.contact-section .contact-form-card { /* Tarjeta que contiene el formulario de contacto */
+    text-align: center;
+    width: 100%;
+}
+
+.contact-section .contact-form-card h1 {
+    font-size: 5.0em;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.contact-section .contact-form-card p {
+    font-size: 1.6em;
+    color: #666;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-section .ambulance-icon {
+    font-size: 1.5em;
+}
+
+.contact-section .contact-input-group { /* Grupo de campos de entrada en el formulario de contacto */
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-section .contact-input-group input,
+.contact-section .contact-textarea-group textarea { /* Campos de entrada y textarea */
+    flex: 1;
+    padding: 15px 20px;
+    border: 1px solid var(--contact-border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    background-color: #ffffff;
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    min-width: 400px;
+}
+
+.contact-section .contact-input-group input::placeholder,
+.contact-section .contact-textarea-group textarea::placeholder {
+    color: #aaa;
+}
+
+.contact-section .contact-input-group input:focus,
+.contact-section .contact-textarea-group textarea:focus {
+    border-color: var(--contact-focus-border);
+    box-shadow: 0 0 0 3px rgba(106, 140, 158, 0.2);
+}
+
+.contact-section .contact-textarea-group {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.contact-section .contact-textarea-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-section button[type="submit"] {
+    background-color: var(--contact-button-color);
+    color: #fff;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto;
+    display: inline-block;
+}
+
+.contact-section button[type="submit"]:hover {
+    background-color: var(--contact-button-hover-color);
+    transform: translateY(-2px);
+}
+
+---
+
+/* --- Media Queries (Diseño Responsivo) - Consolidado --- */
+
+/* Para pantallas medianas (tabletas, max-width: 768px) */
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+    .navbar nav ul {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .navbar nav ul li {
+        margin: 5px 15px;
+    }
+    .sign-up-btn {
+        margin-top: 15px;
+    }
+
+    /* FAQ Card */
+    .faq-card {
+        padding: 30px;
+    }
+    .faq-card h1 {
+        font-size: 1.8em;
+    }
+    .faq-card ul {
+        margin-left: 15px;
+    }
+
+    /* Contact Form (usando las nuevas clases específicas) */
+    .contact-section .contact-input-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .contact-section .contact-input-group input {
+        min-width: unset;
+        width: 100%;
+    }
+    .contact-section .contact-form-card h1 {
+        font-size: 1.8em;
+    }
+    .contact-section .contact-form-card p {
+        font-size: 1em;
+    }
+    .contact-section button[type="submit"] {
+        width: 100%;
+    }
+}
+
+/* Para pantallas pequeñas (móviles, max-width: 480px) */
+@media (max-width: 480px) {
+    /* Navbar */
+    .navbar {
+        padding: 10px 15px;
+    }
+    .navbar .logo {
+        font-size: 1.5em;
+    }
+    .navbar nav ul li {
+        margin: 5px 10px;
+        font-size: 0.9em;
+    }
+    .sign-up-btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    /* FAQ Card */
+    .faq-card {
+        padding: 20px;
+    }
+    .faq-card h1 {
+        font-size: 1.5em;
+    }
+    .faq-card ul li a,
+    .faq-card .consult-text,
+    .faq-card .more-info-text {
+        font-size: 0.9em;
+    }
+    .faq-card .footer-logo {
+        font-size: 1.2em;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    /* Contact Form (usando las nuevas clases específicas) */
+    .contact-section .contact-container {
+        padding: 20px;
+    }
+    .contact-section .contact-logo {
+        width: 100px;
+    }
+    .contact-section .contact-form-card h1 {
+        font-size: 1.5em;
+    }
+    .contact-section .contact-form-card p {
+        font-size: 0.9em;
+    }
+    .contact-section .contact-input-group input,
+    .contact-section .contact-textarea-group textarea {
+        padding: 12px 15px;
+        font-size: 0.95em;
+    }
+    .contact-section button[type="submit"] {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+}
