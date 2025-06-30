@@ -242,9 +242,49 @@
         .food-image, .mission-vision-image {
             transition: transform 0.3s ease;
         }
+         
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      padding: 15px 30px;
+    }
+
+    .navbar img.logo {
+      height: 50px;
+    }
+
+    .navbar nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    .signup-button {
+      background-color: orange;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
     </style>
 </head>
 <body>
+       <!-- Navegación -->
+  <div class="navbar">
+    <img src="logo.jpg" alt="Food Wizz Logo" class="logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="todo.html">About Us</a>
+      <a href="primera.html">Software</a>
+    </nav>
+    <button class="signup-button">Sign Up</button>
+  </div>
+    <!-- Fin de Navegación -->
     <!-- Why We Exist Section -->
     <section class="why-exist-section">
         <div class="container">
